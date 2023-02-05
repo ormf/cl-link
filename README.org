@@ -1,0 +1,13 @@
+* cl-link
+*** Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
+
+Common Lisp Port to the Ableton Link Library.
+
+** License
+
+GPL 2.0 or later
+
+
+Copyright (c) 2023 Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
+
+
