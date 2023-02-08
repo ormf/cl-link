@@ -18,7 +18,9 @@ Common Lisp Port to the Ableton Link Library (not yet working)
 
     - in the repl:
 
-      (
+      (cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
+
+      leads to a stack overflow
 
 ** License
 
