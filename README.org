@@ -9,10 +9,17 @@ Common Lisp Port to the Ableton Link Library (not yet working)
 
     - clone this repository
 
-    - cd link-clcxx
+    - build the lib inside the cloned repo  :
+      
+#+BEGIN_SRC bash
 
-    - mkdir build && cd build && cmake .. && make && cd ..
+    cd link-clcxx
 
+    mkdir build && cd build && cmake .. && make && cd ..
+
+#+END_SRC
+
+      
     - install LIBCLCXX into /usr/local or adjust the correct load path
       for the lib in cl-link.lisp
     
@@ -20,7 +27,9 @@ Common Lisp Port to the Ableton Link Library (not yet working)
 
     - in the repl:
 
-      (cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
+#+BEGIN_SRC lisp
+      CL-USER>(cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
+#+END_SRC
 
       leads to a stack overflow
 
