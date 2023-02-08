@@ -19,6 +19,7 @@
 (cffi:define-foreign-library ableton-link
   (t (:default "libAbletonLink")))
 
+(cffi:use-foreign-library clcxx)
 (cffi:use-foreign-library ableton-link)
 
 (cxx:init)
