@@ -9,5 +9,3 @@ GPL 2.0 or later
 
 
 Copyright (c) 2023 Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
-
-

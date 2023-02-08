@@ -9,5 +9,6 @@
   :license  "gpl 2.0 or later"
   :version "0.0.1"
   :serial t
+  :depends-on (:cffi :cxx)
   :components ((:file "package")
                (:file "cl-link")))
