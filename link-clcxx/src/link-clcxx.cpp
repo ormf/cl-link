@@ -18,8 +18,8 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
   
   pack.defclass<Link::SessionState, false>("SessionState")
     .defmethod("tempo", &SessionState::tempo)
-    // .defmethod("setTempo", [](SessionState &sessionState, const double tempo, const uint64_t time)
-    // { sessionState.setTempo(tempo, std::chrono::microseconds(time)); })
+    .defmethod("setTempo", [](SessionState &sessionState, const double tempo, const uint64_t time)
+    { sessionState.setTempo(tempo, std::chrono::microseconds(time)); })
 
 
     //   .defmethod("beatAtTime", [](SessionState &sessionState, uint64_t time, double quantum)

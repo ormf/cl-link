@@ -1,7 +1,24 @@
 * cl-link
 *** Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
 
-Common Lisp Port to the Ableton Link Library.
+Common Lisp Port to the Ableton Link Library (not yet working)
+
+** Test
+
+*** Steps to reproduce
+
+    - clone this repository
+
+    - cd link-clcxx
+
+    - mkdir build && cd build && cmake .. && make && cd ..
+
+
+    - start cl and load cl-link.asd (using quicklisp or asdf)
+
+    - in the repl:
+
+      (
 
 ** License
 

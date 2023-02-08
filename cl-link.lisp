@@ -27,16 +27,4 @@
 
 (cxx:init)
 
-(cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
-
-
-;;; 
-;;;(cxx:add-package "TEST" "TEST")
-
-;;; (cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
-
-
-
-;;; (make-instance 'abl-link::link)
-
-
+;; (cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
