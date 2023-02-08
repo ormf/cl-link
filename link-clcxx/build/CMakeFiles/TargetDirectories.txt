@@ -1,3 +1,0 @@
-/home/orm/work/programmieren/lisp/cl-link/link-clcxx/build/CMakeFiles/AbletonLink.dir
-/home/orm/work/programmieren/lisp/cl-link/link-clcxx/build/CMakeFiles/edit_cache.dir
-/home/orm/work/programmieren/lisp/cl-link/link-clcxx/build/CMakeFiles/rebuild_cache.dir
