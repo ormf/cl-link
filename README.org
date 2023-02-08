@@ -13,7 +13,9 @@ Common Lisp Port to the Ableton Link Library (not yet working)
 
     - mkdir build && cd build && cmake .. && make && cd ..
 
-
+    - install LIBCLCXX into /usr/local or adjust the correct load path
+      for the lib in cl-link.lisp
+    
     - start cl and load cl-link.asd (using quicklisp or asdf)
 
     - in the repl:

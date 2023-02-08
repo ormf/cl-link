@@ -5,10 +5,6 @@
 
 (in-package :cl-link)
 
-(pushnew (asdf:system-relative-pathname :cl-link "link-clcxx/lib/")
-         cffi:*foreign-library-directories*
-         :test #'equal)
-
 (pushnew (pathname "/usr/local/lib/")
          cffi:*foreign-library-directories*
          :test #'equal)
@@ -16,12 +12,12 @@
 (cffi:define-foreign-library clcxx
     (t (:default "libclcxx")))
 
-(cffi:use-foreign-library clcxx)
-
-(namestring (merge-pathnames "libAbletonLink" (asdf:system-relative-pathname :cl-link "link-clcxx/lib/")))
+(pushnew (asdf:system-relative-pathname :cl-link "link-clcxx/lib/")
+         cffi:*foreign-library-directories*
+         :test #'equal)
 
 (cffi:define-foreign-library ableton-link
-  (t (:default "/home/orm/work/programmieren/lisp/cl-link/link-clcxx/lib/libAbletonLink")))
+  (t (:default "libAbletonLink")))
 
 (cffi:use-foreign-library ableton-link)
 
