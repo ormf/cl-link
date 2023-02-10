@@ -10,7 +10,7 @@
          :test #'equal)
 
 (cffi:define-foreign-library clcxx
-    (t (:default "libclcxx")))
+    (t (:default "libClCxx")))
 
 (pushnew (asdf:system-relative-pathname :cl-link "link-clcxx/lib/")
          cffi:*foreign-library-directories*
@@ -23,5 +23,7 @@
 (cffi:use-foreign-library ableton-link)
 
 (cxx:init)
+
+;;; (cxx:add-package "TEST" "TEST")
 
 ;; (cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
