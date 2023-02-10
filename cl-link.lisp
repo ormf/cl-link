@@ -27,3 +27,5 @@
 ;;; (cxx:add-package "TEST" "TEST")
 
 ;; (cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
+
+;;; error: Unknown CFFI type LINK_CLCXX:CLOCK

@@ -27,5 +27,6 @@ CLCXX_PACKAGE TEST(clcxx::Package& pack) {
   pack.defclass<xx, false>("xx")
     .member("y", &xx::y)
     .defmethod("foo", F_PTR(&xx::greet))
+    .defmethod("foo.x", F_PTR([](xx x){return x.x;}))
     .constructor<int, int>();
 }
