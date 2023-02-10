@@ -6,7 +6,7 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
 {
   using namespace ableton;
 
-  using Clock = typename Link::Clock;
+  using Clock = Link::Clock;
   using SessionState = Link::SessionState;
   using micros = std::chrono::microseconds;
 
