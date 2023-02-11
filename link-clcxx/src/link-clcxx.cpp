@@ -11,9 +11,11 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
   using micros = std::chrono::microseconds;
 
   
-  // pack.defclass<Link::Clock, false>("Clock")
-  //   .defmethod("micros", F_PTR(&Clock::micros))
-  //   ;
+ // pack.defclass<Link::Clock, false>("Clock")
+ //   .defmethod("micros", F_PTR([](Clock &clock) {
+ //                   return clock.micros().count();
+ //                 }))
+ //   ;
   
   pack.defclass<Link::SessionState, false>("SessionState")
     .defmethod("tempo", F_PTR(&SessionState::tempo))
