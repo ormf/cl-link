@@ -25,3 +25,5 @@
 (cxx:init)
 
 (cxx:add-package "LINK-CLCXX" "LINK_CLCXX" )
+
+(use-package :link-clcxx)

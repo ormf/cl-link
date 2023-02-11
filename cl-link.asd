@@ -2,7 +2,6 @@
 ;;
 ;;;; Copyright (c) 2023 Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
 
-
 (asdf:defsystem #:cl-link
   :description "Describe cl-link here"
   :author "Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>"
@@ -11,4 +10,5 @@
   :serial t
   :depends-on (:cffi :cxx)
   :components ((:file "package")
-               (:file "cl-link")))
+               (:file "load-lib")
+               (:file "export-syms")))
