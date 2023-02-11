@@ -104,7 +104,8 @@ elseif(UNIX)
     )
   elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     set(link_platform_HEADERS
-      ${link_platform_HEADERS}
+      message("Linux included")
+    ${link_platform_HEADERS}
       ${link_platform_DIR}/linux/Clock.hpp
       ${link_platform_DIR}/linux/Linux.hpp
       ${link_platform_DIR}/stl/Clock.hpp
