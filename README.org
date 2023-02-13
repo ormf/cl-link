@@ -35,8 +35,13 @@ $ ln -s <path-to-cl-link-repo>/examples/linkhut ~/quicklisp/local-projects/
       CL-USER> (ql:quickload "linkhut")
 #+END_SRC
 
-      (this should also load hunchentoot and websocket)
-      leads to a stack overflow
+      Open the file =examples/linkhut/linkhut.html= in a webbrowser.
+
+      Evaluate the expressions in =examples/linkhut/scratch.lisp=
+
+      - setting the callbacks leads to a memory fault
+
+      - evaluating =(enable-start-stop-sync *link* t)= results in a stack overflow
 
 ** License
 
