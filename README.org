@@ -7,30 +7,35 @@ Common Lisp Port to the Ableton Link Library (not yet working)
 
 *** Steps to reproduce
 
+    - clone [[https://github.com/ormf/cl-websocket-server][cl-websocket-server]
+    
     - clone this repository
 
     - build the lib inside the cloned repo  :
       
 #+BEGIN_SRC bash
-
-    cd link-clcxx
-
-    mkdir build && cd build && cmake .. && make && cd ..
-
+$ cd link-clcxx
+$ mkdir build && cd build && cmake .. && make && cd ..
 #+END_SRC
 
-      
     - install LIBCLCXX into /usr/local or adjust the correct load path
       for the lib in cl-link.lisp
     
-    - start cl and load cl-link.asd (using quicklisp or asdf)
+    - link cl-websocket-server, cl-link and the linkhut example into quicklisp:
+
+#+BEGIN_SRC bash
+$ ln -s <path-to-cl-websocket-server-repo> ~/quicklisp/local-projects/
+$ ln -s <path-to-cl-link-repo> ~/quicklisp/local-projects/
+$ ln -s <path-to-cl-link-repo>/examples/linkhut ~/quicklisp/local-projects/
+#+END_SRC
 
     - in the repl:
 
 #+BEGIN_SRC lisp
-      CL-USER>(cxx:add-package "LINK_CLCXX" "LINK_CLCXX")
+      CL-USER> (ql:quickload "linkhut")
 #+END_SRC
 
+      (this should also load hunchentoot and websocket)
       leads to a stack overflow
 
 ** License

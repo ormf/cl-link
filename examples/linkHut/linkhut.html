@@ -32,7 +32,7 @@ socket.send("Heartbeat");
 }
 
 socket.onmessage = function(event) {
-console.log(`[message] Data received from server: ${event.data}`);
+<!-- console.log(`[message] Data received from server: ${event.data}`); -->
 msgBox.textContent = `${event.data}`;
 };
 
@@ -49,14 +49,5 @@ socket.onclose = function(event) {
 socket.onerror = function(error) {
   console.log(`[error] ${error.message}`);
 };
-
-
-
-async function start() {
-  
-
-}
-
-start();
 </script>
 </html>

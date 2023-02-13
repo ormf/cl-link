@@ -48,17 +48,17 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
     .defmethod("is-enabled", F_PTR(&Link::isEnabled))
     .defmethod("enable", F_PTR([](Link &link, bool bEnable)
     { link.enable(bEnable); }))
-
-  //  F_PTR(&Link::enable))
-    .defmethod("num-peers", F_PTR(&Link::numPeers))
+    .defmethod("enable-start-stop-sync", F_PTR([](Link &link, bool bEnable)
+    { link.enableStartStopSync(bEnable); }))
+    //    .defmethod("num-peers", F_PTR(&Link::numPeers))
+    .defmethod("num-peers", F_PTR([](Link &link)
+    { return link.numPeers(); }))
     .defmethod("micros", F_PTR([](Link &link) {
                    return link.clock().micros().count();
                  }))
     .defmethod("capture-session-state", F_PTR(&Link::captureAppSessionState))
     .defmethod("commit-session-state", F_PTR(&Link::commitAppSessionState))
     .defmethod("is-start-stop-sync-enabled", F_PTR(&Link::isStartStopSyncEnabled))
-    .defmethod("enable-start-stop-sync", F_PTR([](Link &link, bool bEnable)
-    { link.enableStartStopSync(bEnable); }))
     .defmethod("set-num-peers-callback",
                F_PTR([](Link &link, const std::function<void(std::size_t)> &callback)
     { link.setNumPeersCallback(callback); }))
@@ -70,4 +70,3 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
     ;
 
 }
-
