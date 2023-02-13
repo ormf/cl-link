@@ -7,11 +7,11 @@ Common Lisp Port to the Ableton Link Library (not yet working)
 
 *** Steps to reproduce
 
-    - clone [[https://github.com/ormf/cl-websocket-server][cl-websocket-server]
+    - clone [[https://github.com/ormf/cl-websocket-server][cl-websocket-server]]
     
     - clone this repository
 
-    - build the lib inside the cloned repo  :
+    - build the lib inside the cloned repo:
       
 #+BEGIN_SRC bash
 $ cd link-clcxx
