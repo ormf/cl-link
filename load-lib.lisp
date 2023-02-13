@@ -27,3 +27,10 @@
 (cxx:add-package "LINK-CLCXX" "LINK_CLCXX" )
 
 (use-package :link-clcxx)
+
+(cffi:defctype size_t
+  #.(cond ((= 4 (cffi:foreign-type-size :pointer))
+           :uint32)
+          ((= 8 (cffi:foreign-type-size :pointer))
+           :uint64)
+          (t (error "Failed type lisp-pointer-type"))))

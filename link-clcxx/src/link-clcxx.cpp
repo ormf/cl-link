@@ -1,10 +1,17 @@
 #include <ableton/Link.hpp>
+#include "AudioPlatform.hpp"
+//#include "AudioPlatform_Jack.hpp"
+#include "AudioEngine.hpp"
 #include <clcxx/clcxx.hpp>
 #include "clcxx/clcxx_config.hpp"
+
+// typedef ableton::LINK* mypt;
 
 CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
 {
   using namespace ableton;
+
+  using namespace ableton::linkaudio;
 
   using Clock = Link::Clock;
   using SessionState = Link::SessionState;
@@ -16,6 +23,7 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
  //                   return clock.micros().count();
  //                 }))
  //   ;
+
   
   pack.defclass<Link::SessionState, false>("SessionState")
     .defmethod("tempo", F_PTR(&SessionState::tempo))
@@ -32,13 +40,16 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
     .defmethod("is-playing", F_PTR(&SessionState::isPlaying))
     .defmethod("set-is-playing", F_PTR([](SessionState &sessionState, const bool isPlaying, const uint64_t time)
     { sessionState.setIsPlaying(isPlaying, micros(time)); }))
-    //       .constructor<>()
+    .constructor<link::ApiState, bool>()
     ;
   
   pack.defclass<Link, false>("Link")
     // .defmethod(init)
     .defmethod("is-enabled", F_PTR(&Link::isEnabled))
-    .defmethod("enable", F_PTR(&Link::enable))
+    .defmethod("enable", F_PTR([](Link &link, bool bEnable)
+    { link.enable(bEnable); }))
+
+  //  F_PTR(&Link::enable))
     .defmethod("num-peers", F_PTR(&Link::numPeers))
     .defmethod("micros", F_PTR([](Link &link) {
                    return link.clock().micros().count();
@@ -46,7 +57,8 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
     .defmethod("capture-session-state", F_PTR(&Link::captureAppSessionState))
     .defmethod("commit-session-state", F_PTR(&Link::commitAppSessionState))
     .defmethod("is-start-stop-sync-enabled", F_PTR(&Link::isStartStopSyncEnabled))
-    .defmethod("enable-start-stop-sync", F_PTR(&Link::enableStartStopSync))
+    .defmethod("enable-start-stop-sync", F_PTR([](Link &link, bool bEnable)
+    { link.enableStartStopSync(bEnable); }))
     .defmethod("set-num-peers-callback",
                F_PTR([](Link &link, const std::function<void(std::size_t)> &callback)
     { link.setNumPeersCallback(callback); }))
@@ -56,4 +68,6 @@ CLCXX_PACKAGE LINK_CLCXX (clcxx::Package& pack)
     { link.setStartStopCallback(callback); }))
     .constructor<double>("make-ableton-link")
     ;
+
 }
+

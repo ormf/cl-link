@@ -18,9 +18,26 @@
 ;;;
 ;;; **********************************************************************
 
-(in-package :cl-user)
+(in-package :cl-link)
 
-(cxx:add-package "TEST" "TEST")
+(shadowing-import
+ '(link-clcxx:make-ableton-link) 'cl-link)
+
+(export '(make-ableton-link) 'cl-link)
+
+
+
+
+(defparameter *link* (make-AbletonLink 120.0d0))
+
+(micros *link*)
+(enable *link* t)
+(enablestartstopsync *link* t)
+
+(defparameter *s* (captureSessionState *link*))
+
+(tempo *s*)
+
 ;;; creating an instance of xx:
 
 (defparameter *test* (test:create-xx2 10 12))
