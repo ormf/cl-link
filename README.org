@@ -1,4 +1,14 @@
-* cl-link
+* This Repository has Moved!
+
+  Due to the fact that GitHub is hosting the files on privately owned
+  servers located in the USA, this repository has been moved to
+  [[https://codeberg.org/ormf/cl-link/][Codeberg]] in November of 2025. It
+  will not receive further updates or patches. Issues and pull
+  requests will not be looked at here either, please submit your
+  patches and issue tickets on Codeberg, or send them directly via
+  good old email patches to the author.
+
+  Thanks.* cl-link
 *** Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
 
 Common Lisp Port to the Ableton Link Library (not yet working)
@@ -46,6 +56,17 @@ $ ln -s <path-to-cl-link-repo>/examples/linkhut ~/quicklisp/local-projects/
 ** License
 
 GPL 2.0 or later
+
+
+Copyright (c) 2023 Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
+* cl-link
+*** _Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>_
+
+This is a project to do ... something.
+
+** License
+
+gpl 2.0 or later
 
 
 Copyright (c) 2023 Orm Finnendahl <orm.finnendahl@selma.hfmdk-frankfurt.de>
